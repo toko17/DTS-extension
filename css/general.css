@@ -1,0 +1,78 @@
+.helper {
+	position: fixed;
+	z-index: 99999;
+	bottom: 10%;
+	right: 0;
+	height: 50px;
+	width: 50px;
+	background-color: #182952;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.scam {
+	color: #fff;
+	font-size: 1.8em;
+}
+
+.custom-file-upload, #upload, .start, .helper-delete-all {
+    border: none;
+	color: #fff;
+	font-family: "Poppins", sans-serif;
+    display: inline-block;
+	background-color: transparent;
+    padding: 0;
+	font-weight: 700;
+    cursor: pointer;
+	margin-bottom: 0.5em;
+	text-align: start;
+}
+
+.helper-content input[type="file"] {
+    display: none;
+}
+
+.helper-content {
+	padding: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.helper-header {
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	border-bottom: 1px solid #E14594;
+}
+
+.helper-fun {
+	position: fixed;
+	z-index: 99999;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+	bottom: 10%;
+	right: -250px;
+	height: 400px;
+	width: 250px;
+	background-color: #182952;
+	border-top-left-radius: 5px;
+	transition: 0.3s;
+}
+
+.fun-slide {
+	right: 0;
+}
+
+.slide {
+	right: 250px;
+}

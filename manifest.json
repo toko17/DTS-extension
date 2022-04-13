@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Hello Retail DTS",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://my.helloretail.com/*"
+            ],
+            "js": ["js/helper.js", "js/functions.js", "js/directory.js"],
+            "css": ["css/general.css"]
+        }
+    ]
+}
