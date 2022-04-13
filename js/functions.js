@@ -1,5 +1,4 @@
-
-function synonyms() {
+let synonyms = function() {
 	let input = document.createElement("input");
 	input.setAttribute("type", "file");
 	input.setAttribute("id", "fileUpload");
