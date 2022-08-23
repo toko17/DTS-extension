@@ -453,6 +453,7 @@ let helper_methods = {
 		version_menu.dispatchEvent(new Event('input', {bubbles:true}));
 
 		let lang_menu = create_element("select", "select");
+		lang_menu.classList.add("upper");
 		get_menu(versions[version_menu.value], lang_menu);
 
 		version_menu.addEventListener("input", () => {

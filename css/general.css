@@ -47,6 +47,10 @@
 	text-transform: capitalize;
 }
 
+.select.upper {
+	text-transform: uppercase;
+}
+
 .helper-content input[type="file"] {
     display: none;
 }
