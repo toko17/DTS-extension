@@ -8,6 +8,7 @@ Chrome extension made for helping DTS
 3. Enable developer mode
 4. Press Load unpacked
 5. Select the folder you cloned from github
+6. Press Select and make sure the extension is enabled
 
 The extension will be added once you've followed the above steps.
 
