@@ -475,7 +475,12 @@ let helper_methods = {
 				}
 			}
 
-			// change to initialContentEditor id and change inputs for instant visuals
+			// For changing init visuals
+			let init_container = document.querySelector(".card.panel-default");
+			init_container.querySelector(".form-group:nth-child(3) input").value = vers.title;
+			init_container.querySelector(".form-group:nth-child(4) input").value = vers.subtitle;
+
+			// For changing init values
 			let init_content = document.querySelector("input[name='partnerSearchConfigViewModel.initialContentJson']");
 			if (init_content) {
 				let initJSON = JSON.parse(init_content.value);
