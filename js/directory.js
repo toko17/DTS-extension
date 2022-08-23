@@ -1,13 +1,15 @@
-const regex = /.*(search-synonyms)$/g;
-if (window.location.pathname.match(regex)) {
-	helper_methods.synonyms();
-}
 document.querySelectorAll(".nav-item").forEach((item) => {
 	item.addEventListener("click", () => {
 		content.innerHTML = "";
-		if (window.location.pathname.match(regex)) {
-			helper_methods.synonyms();
-		}
+		select_helper();
 	});
 }); 
 
+function select_helper() {
+	if (window.location.pathname.match(/.*(search-synonyms)$/g)) {
+		helper_methods.synonyms();
+	} else if (window.location.pathname.match(/.*(search\/edit\.html).*/g)) {
+		helper_methods.search_edit();
+	}
+}
+select_helper();
