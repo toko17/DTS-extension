@@ -112,8 +112,8 @@ let helper_methods = {
 		const versions = {
 			desktop: {
 				en: {
-					title: "title",
-					subtitle: "subtitle",
+					title: "Popular products",
+					subtitle: "Top {{ totalResults }} most popular products",
 					text_type_to_search: 'Search among 10,000 products...',
 					text_sorting_title: 'Sort by',
 					text_go_directly_to: 'Go to: ',
@@ -126,6 +126,8 @@ let helper_methods = {
 					result_subtitle: 'The search <strong> "$query$"</strong> matches <strong>$totalResults$</strong> $contentType$'
 				},
 				da: {
+					title: "Populære produkter",
+					subtitle: "De {{ totalResults }} mest populære produktene",
 					text_type_to_search: 'Søg blandt produkter...',
 					text_sorting_title: 'Sorter efter',
 					text_go_directly_to: 'Gå til: ',
@@ -138,6 +140,8 @@ let helper_methods = {
 					result_subtitle: 'Søgningen <strong> "$query$"</strong> gav <strong>$totalResults$</strong> $contentType$'
 				},
 				se: {
+					title: "Populära produkter",
+					subtitle: "De {{ totalResults }} mest populära produkterna",
 					text_type_to_search: 'Sök bland produkter...',
 					text_sorting_title: 'Sorter efter',
 					text_go_directly_to: 'Gå till: ',
@@ -150,6 +154,8 @@ let helper_methods = {
 					result_subtitle: 'Söket <strong> "$query$"</strong> matchar <strong>$totalResults$</strong> $contentType$'
 				},
 				nl: {
+					title: "Populaire producten",
+					subtitle: "De {{ totalResults }} meest populaire producten",
 					text_type_to_search: 'Zoeken producten...',
 					text_sorting_title: 'Sorteer op',
 					text_go_directly_to: 'Ga naar: ',
@@ -162,6 +168,8 @@ let helper_methods = {
 					result_subtitle: 'De zoektocht <strong> "$query$"</strong> gaf <strong>$totalResults$</strong> $contentType$'
 				},
 				no: {
+					title: "Populære produkter",
+					subtitle: "De {{ totalResults }} mest populære produktene",
 					text_type_to_search: 'Søk produkter...',
 					text_sorting_title: 'Sortere etter',
 					text_go_directly_to: 'Gå til: ',
@@ -174,6 +182,8 @@ let helper_methods = {
 					result_subtitle: 'Søket <strong> "$query$"</strong> matcher <strong>$totalResults$</strong> $contentType$'
 				},
 				fi: {
+					title: "Suosittuja tuotteita",
+					subtitle: "{{ totalResults }} suosituinta tuotetta",
 					text_type_to_search: 'Etsiä tuotteita...',
 					text_sorting_title: 'Järjestä',
 					text_go_directly_to: 'Mene: ',
@@ -186,6 +196,8 @@ let helper_methods = {
 					result_subtitle: 'Etsintä <strong> "$query$"</strong> ottelut <strong>$totalResults$</strong> $contentType$'
 				},
 				de: {
+					title: "Beliebte produkte",
+					subtitle: "Die {{ totalResults }} beliebtesten Produkte",
 					text_type_to_search: 'Suche produkten...',
 					text_sorting_title: 'Sortieren nach',
 					text_go_directly_to: 'Gehe zu: ',
@@ -198,6 +210,8 @@ let helper_methods = {
 					result_subtitle: 'Die Suche <strong> "$query$"</strong> streichhölzer <strong>$totalResults$</strong> $contentType$'
 				},
 				fr: {
+					title: "Produits populaires",
+					subtitle: "Les {{ totalResults }} produits les plus populaires",
 					text_type_to_search: 'Rechercher parmi les produits...',
 					text_sorting_title: 'Trier par',
 					text_go_directly_to: 'Aller à: ',
@@ -212,6 +226,8 @@ let helper_methods = {
 			},
 			mobile: {
 				en: {
+					title: "Popular products",
+					subtitle: "Top {{ totalResults }} most popular products",
 					text_type_to_search: 'Search among products...',
 					text_sorting_title: 'Sortering',
 					text_go_directly_to: 'Go directly to:',
@@ -223,6 +239,8 @@ let helper_methods = {
 					result_filters_subtitle: 'Your choices gave <strong class="hr-highlight">$totalResults$</strong> $contentType$'
 				},
 				da: {
+					title: "Populære produkter",
+					subtitle: "De {{ totalResults }} mest populære produktene",
 					text_type_to_search: 'Søg blandt produkter...',
 					text_sorting_title: 'Sortering',
 					text_go_directly_to: 'Gå direkte til:',
@@ -234,6 +252,8 @@ let helper_methods = {
 					result_filters_subtitle: 'Dine valg gav <strong class="hr-highlight">$totalResults$</strong> $contentType$'
 				},
 				se: {
+					title: "Populära produkter",
+					subtitle: "De {{ totalResults }} mest populära produkterna",
 					text_type_to_search: 'Sök bland produkter...',
 					text_sorting_title: 'Sortering',
 					text_go_directly_to: 'Gå direkt till:',
@@ -245,6 +265,8 @@ let helper_methods = {
 					result_filters_subtitle: 'Dina val gav <strong class="hr-highlight">$totalResults$</strong> $contentType$'
 				},
 				nl: {
+					title: "Populaire producten",
+					subtitle: "De {{ totalResults }} meest populaire producten",
 					text_type_to_search: 'Zoeken producten...',
 					text_sorting_title: 'Sorteren',
 					text_go_directly_to: 'Ga direct naar:',
@@ -256,6 +278,8 @@ let helper_methods = {
 					result_filters_subtitle: 'Jouw keuzes gaven <strong class="hr-highlight">$totalResults$</strong> $contentType$'
 				},
 				no: {
+					title: "Populære produkter",
+					subtitle: "De {{ totalResults }} mest populære produktene",
 					text_type_to_search: 'Søk produkter...',
 					text_sorting_title: 'Sortere etter',
 					text_go_directly_to: 'Gå til: ',
@@ -267,6 +291,8 @@ let helper_methods = {
 					result_filters_subtitle: 'Dine valg ga <strong class="hr-highlight">$totalResults$</strong> $contentType$'
 				},
 				fi: {
+					title: "Suosittuja tuotteita",
+					subtitle: "{{ totalResults }} suosituinta tuotetta",
 					text_type_to_search: 'Etsiä tuotteita...',
 					text_sorting_title: 'Järjestä',
 					text_go_directly_to: 'Mene: ',
@@ -278,6 +304,8 @@ let helper_methods = {
 					result_filters_subtitle: 'Valintasi antoivat <strong class="hr-highlight">$totalResults$</strong> $contentType$'
 				},
 				de: {
+					title: "Beliebte produkte",
+					subtitle: "Die {{ totalResults }} beliebtesten Produkte",
 					text_type_to_search: 'Suche produkten...',
 					text_sorting_title: 'Sortieren nach',
 					text_go_directly_to: 'Gehe zu: ',
@@ -289,6 +317,8 @@ let helper_methods = {
 					result_filters_subtitle: 'Ihre Entscheidungen gaben <strong class="hr-highlight">$totalResults$</strong> $contentType$'
 				},
 				fr: {
+					title: "Produits populaires",
+					subtitle: "Les {{ totalResults }} produits les plus populaires",
 					text_type_to_search: 'Rechercher parmi les produits...',
 					text_sorting_title: 'Trier par',
 					text_go_directly_to: 'Aller à: ',
@@ -302,6 +332,8 @@ let helper_methods = {
 			},
 			embedded: {
 				en: {
+					title: "Popular products",
+					subtitle: "Top {{ totalResults }} most popular products",
 					text_sorting_title: 'Sort by',
 					text_go_directly_to: 'Go to: ',
 					text_products_search_title: 'search results',
@@ -313,6 +345,8 @@ let helper_methods = {
 					result_subtitle: 'The search <strong> "$query$"</strong> matches <strong>$totalResults$</strong> $contentType$'
 				},
 				da: {
+					title: "Populære produkter",
+					subtitle: "De {{ totalResults }} mest populære produktene",
 					text_sorting_title: 'Sorter efter',
 					text_go_directly_to: 'Gå til: ',
 					text_products_search_title: 'søge resultater',
@@ -324,6 +358,8 @@ let helper_methods = {
 					result_subtitle: 'Søgningen <strong> "$query$"</strong> gav <strong>$totalResults$</strong> $contentType$'
 				},
 				se: {
+					title: "Populära produkter",
+					subtitle: "De {{ totalResults }} mest populära produkterna",
 					text_sorting_title: 'Sorter efter',
 					text_go_directly_to: 'Gå till: ',
 					text_products_search_title: 'sökresultat',
@@ -335,6 +371,8 @@ let helper_methods = {
 					result_subtitle: 'Söket <strong> "$query$"</strong> matchar <strong>$totalResults$</strong> $contentType$'
 				},
 				nl: {
+					title: "Populaire producten",
+					subtitle: "De {{ totalResults }} meest populaire producten",
 					text_sorting_title: 'Sorteer op',
 					text_go_directly_to: 'Ga naar: ',
 					text_products_search_title: 'zoekresultaten',
@@ -346,6 +384,8 @@ let helper_methods = {
 					result_subtitle: 'De zoektocht <strong> "$query$"</strong> gaf <strong>$totalResults$</strong> $contentType$'
 				},
 				no: {
+					title: "Populære produkter",
+					subtitle: "De {{ totalResults }} mest populære produktene",
 					text_sorting_title: 'Sortere etter',
 					text_go_directly_to: 'Gå til: ',
 					text_products_search_title: 'søkeresultater',
@@ -357,6 +397,8 @@ let helper_methods = {
 					result_subtitle: 'Søket <strong> "$query$"</strong> matcher <strong>$totalResults$</strong> $contentType$'
 				},
 				fi: {
+					title: "Suosittuja tuotteita",
+					subtitle: "{{ totalResults }} suosituinta tuotetta",
 					text_sorting_title: 'Järjestä',
 					text_go_directly_to: 'Mene: ',
 					text_products_search_title: 'hakutulokset',
@@ -368,6 +410,8 @@ let helper_methods = {
 					result_subtitle: 'Etsintä <strong> "$query$"</strong> ottelut <strong>$totalResults$</strong> $contentType$'
 				},
 				de: {
+					title: "Beliebte produkte",
+					subtitle: "Die {{ totalResults }} beliebtesten Produkte",
 					text_sorting_title: 'Sortieren nach',
 					text_go_directly_to: 'Gehe zu: ',
 					text_products_search_title: 'suchergebnisse',
@@ -379,6 +423,8 @@ let helper_methods = {
 					result_subtitle: 'Die Suche <strong> "$query$"</strong> streichhölzer <strong>$totalResults$</strong> $contentType$'
 				},
 				fr: {
+					title: "Produits populaires",
+					subtitle: "Les {{ totalResults }} produits les plus populaires",
 					text_sorting_title: 'Trier par',
 					text_go_directly_to: 'Aller à: ',
 					text_products_search_title: 'résultats de recherche',
