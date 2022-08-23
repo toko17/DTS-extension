@@ -108,7 +108,7 @@ let helper_methods = {
 		});
 	},
 	search_edit: function() {
-		let versions = {
+		const versions = {
 			desktop: {
 				en: {
 					text_type_to_search: 'Search among 10,000 products...',
