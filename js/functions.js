@@ -447,24 +447,22 @@ let helper_methods = {
 			});
 		}
 
-		let version_menu = document.createElement("select");
-		version_menu.classList.add("select");
+		let version_menu = create_element("select", "select");
 		get_menu(versions, version_menu);
 		version_menu.dispatchEvent(new Event('input', {bubbles:true}));
 
-		let lang_menu = document.createElement("select");
-		lang_menu.classList.add("select");
+		let lang_menu = create_element("select", "select");
 		get_menu(versions[version_menu.value], lang_menu);
 
 		version_menu.addEventListener("input", () => {
 			lang_menu.innerHTML = "";
 			get_menu(versions[version_menu.value], lang_menu);
 		});
-
-		let translateBtn = document.createElement("button");
+		
+		let translateBtn = create_element("button", "start");
 		translateBtn.textContent = "Translate";
-		translateBtn.classList.add("start");
 		translateBtn.addEventListener("click", () => {
+			// Changes search inputs
 			let vers = versions[version_menu.value][lang_menu.value];
 			for (let [key, value] of Object.entries(vers)) {
 				if (key != "title" && key != "subtitle") {
@@ -490,13 +488,17 @@ let helper_methods = {
 			}
 		});
 
-		let save = document.createElement("button");
+		let save = create_element("button", "start")
 		save.textContent = "Save";
-		save.classList.add("start");
 		save.addEventListener("click", function() {
 			document.querySelector(".btn.btn-success.btn-icon-text").click();
 		});
 
 		content.append(version_menu, lang_menu, translateBtn, save);
+	},
+	no_helper: function() {
+		let placeholder = create_element("h4", "helper-header")
+		placeholder.textContent = "No helper for this site";
+		content.append(placeholder);
 	}
 }

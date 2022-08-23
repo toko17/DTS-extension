@@ -10,6 +10,8 @@ function select_helper() {
 		helper_methods.synonyms();
 	} else if (window.location.pathname.match(/.*(search\/edit\.html).*/g)) {
 		helper_methods.search_edit();
+	} else {
+		helper_methods.no_helper();
 	}
 }
 select_helper();
