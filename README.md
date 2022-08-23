@@ -1,4 +1,4 @@
-# DTS-extensions
+# DTS-extension
 Chrome extension made for helping DTS
 
 ## How to add to chrome
@@ -10,7 +10,6 @@ Chrome extension made for helping DTS
 5. Select the folder you cloned from github
 
 The extension will be added once you've followed the above steps.
-
 
 ## Current helper functions
 
