@@ -1,4 +1,4 @@
-# DTS-extensions
+# DTS-extension
 Chrome extension made for helping DTS
 
 ## How to add to chrome
