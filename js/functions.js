@@ -108,9 +108,12 @@ let helper_methods = {
 		});
 	},
 	search_edit: function() {
+		// Versions -> language
 		const versions = {
 			desktop: {
 				en: {
+					title: "title",
+					subtitle: "subtitle",
 					text_type_to_search: 'Search among 10,000 products...',
 					text_sorting_title: 'Sort by',
 					text_go_directly_to: 'Go to: ',
@@ -390,41 +393,49 @@ let helper_methods = {
 		}
 
 		// Create menu
+		function get_menu(obj, menu) {
+			Object.keys(obj).forEach(item => {
+				let option = document.createElement("option");
+				option.textContent = item;
+				menu.append(option);
+			});
+		}
+
 		let version_menu = document.createElement("select");
 		version_menu.classList.add("select");
-		Object.keys(versions).forEach(version => {
-			let option = document.createElement("option");
-			option.textContent = version;
-			version_menu.append(option);
-		});
+		get_menu(versions, version_menu);
 		version_menu.dispatchEvent(new Event('input', {bubbles:true}));
 
 		let lang_menu = document.createElement("select");
 		lang_menu.classList.add("select");
-		Object.keys(versions[version_menu.value]).forEach(lang => {
-			let option = document.createElement("option");
-			option.textContent = lang;
-			lang_menu.append(option);
-		});
+		get_menu(versions[version_menu.value], lang_menu);
 
 		version_menu.addEventListener("input", () => {
 			lang_menu.innerHTML = "";
-			Object.keys(versions[version_menu.value]).forEach(lang => {
-				let option = document.createElement("option");
-				option.textContent = lang;
-				lang_menu.append(option);
-			});
+			get_menu(versions[version_menu.value], lang_menu);
 		});
 
-		let buttonInput = document.createElement("button");
-		buttonInput.textContent = "Translate";
-		buttonInput.classList.add("start");
-		buttonInput.addEventListener("click", () => {
+		let translateBtn = document.createElement("button");
+		translateBtn.textContent = "Translate";
+		translateBtn.classList.add("start");
+		translateBtn.addEventListener("click", () => {
 			let vers = versions[version_menu.value][lang_menu.value];
 			for (let [key, value] of Object.entries(vers)) {
-				let input = document.querySelector(`input[name='${key}']`);
-				input.value = value;
-				input.dispatchEvent(new Event('input', {bubbles:true}));
+				if (key != "title" && key != "subtitle") {
+					let input = document.querySelector(`input[name='${key}']`);
+					console.log(value, key);
+					input.value = value;
+					input.dispatchEvent(new Event('input', {bubbles:true}));
+				}
+			}
+
+			// change to initialContentEditor id and change inputs for instant visuals
+			let init_content = document.querySelector("input[name='partnerSearchConfigViewModel.initialContentJson']");
+			if (init_content) {
+				let initJSON = JSON.parse(init_content.value);
+				initJSON[0].title = vers.title;
+				initJSON[0].subtitle = vers.subtitle;
+				init_content.value = JSON.stringify(initJSON);
 			}
 		});
 
@@ -435,6 +446,6 @@ let helper_methods = {
 			document.querySelector(".btn.btn-success.btn-icon-text").click();
 		});
 
-		content.append(version_menu, lang_menu, buttonInput, save);
+		content.append(version_menu, lang_menu, translateBtn, save);
 	}
 }
