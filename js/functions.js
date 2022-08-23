@@ -80,20 +80,21 @@ let helper_methods = {
 
 		button.addEventListener("click", () => {
 			for(let i = 0; i < arrayOuter.length; i++) {
-				let inputWord = document.querySelector(".form-container > .form-row:first-child > div:first-child input");
 				let addBtn = document.querySelector(".form-container .btn.btn-danger:not(:disabled):first-child");
 				addBtn.click();
-				inputWord.dispatchEvent(event);
 			}
 			setTimeout(() => {
+				let length = document.querySelectorAll(".form-container > .form-row").length;
 				arrayOuter.forEach((listItem, i) => {
-					let row = document.querySelector(`.form-container > .form-row:nth-child(${i+1})`);
-					let inputWord = row.querySelector(`input[placeholder='Insert word']`);
-					let inputSynonym = row.querySelector(`input[placeholder='Insert synonym']`);
+					let row = document.querySelector(`.form-container > .form-row:nth-child(${length-i})`);
+					let inputWord = row.querySelector("input[placeholder='Insert word']");
+					let inputSynonym = row.querySelector("input[placeholder='Insert synonym']");
 					inputSynonym.value = listItem[1];
+					inputSynonym.dispatchEvent(event)
 					inputWord.value = listItem[0];
+					inputWord.dispatchEvent(event);
 				});
-			}, 100);
+			}, 1000);
 		});
 
 		// Delete all
