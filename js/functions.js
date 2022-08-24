@@ -468,9 +468,10 @@ let helper_methods = {
 			for (let [key, value] of Object.entries(vers)) {
 				if (key != "title" && key != "subtitle") {
 					let input = document.querySelector(`input[name='${key}']`);
-					console.log(value, key);
-					input.value = value;
-					input.dispatchEvent(new Event('input', {bubbles:true}));
+					if (input) {
+						input.value = value;
+						input.dispatchEvent(new Event('input', {bubbles:true}));
+					}					
 				}
 			}
 
