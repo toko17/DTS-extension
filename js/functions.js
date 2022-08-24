@@ -462,10 +462,15 @@ let helper_methods = {
 			}
 		}
 
+		// For saving selected options
+		let saved_ver = null,
+		saved_lan = null;
+
 		// Create menu
 		function get_menu(obj, menu) {
 			Object.keys(obj).forEach(item => {
 				let option = document.createElement("option");
+				option.value = item;
 				option.textContent = item;
 				menu.append(option);
 			});
@@ -483,6 +488,36 @@ let helper_methods = {
 			lang_menu.innerHTML = "";
 			get_menu(versions[version_menu.value], lang_menu);
 		});
+
+		let auto_select_version = document.querySelector(".card-title");
+		if (auto_select_version) {
+			auto_select_version = auto_select_version.textContent.toLowerCase();
+		}
+		let search_version = function() {
+			if (auto_select_version.includes("embedded")) {
+				return "embedded";
+			} else if (auto_select_version.includes("desktop")) {
+				return "desktop";
+			} else if (auto_select_version.includes("mobile")) {
+				return "mobile";
+			} else {
+				return false;
+			}
+		}
+
+		saved_ver = sessionStorage.getItem("version_menu");
+		saved_lan = sessionStorage.getItem("lang_menu");
+
+		if (saved_ver && saved_lan) {
+			version_menu.options[Number(saved_ver)].selected = true;
+			version_menu.dispatchEvent(new Event('input', {bubbles:true}));
+			lang_menu.options.selectedIndex = Number(saved_lan);
+		}
+
+		if (search_version() && !saved_ver && !saved_lan) {
+			version_menu.querySelector(`option[value=${search_version()}]`).selected = true;
+			version_menu.dispatchEvent(new Event('input', {bubbles:true}));
+		}
 		
 		let translateBtn = create_element("button", "start");
 		translateBtn.textContent = "Translate";
@@ -499,6 +534,14 @@ let helper_methods = {
 						console.log("Skipped: '" + key + "' as it does not exist in this template.");
 					}				
 				}
+			}
+
+			// Changing domain input to shop name
+			let domain_url = document.querySelector(".company-url");
+			if (domain_url) {
+				let input = document.querySelector("input[name='webshop_name']");
+				input.value = domain_url.textContent.trim();
+				input.dispatchEvent(new Event('input', {bubbles:true}));
 			}
 
 			// For changing init visuals
@@ -520,6 +563,8 @@ let helper_methods = {
 		save.textContent = "Save";
 		save.addEventListener("click", function() {
 			document.querySelector(".btn.btn-success.btn-icon-text").click();
+			saved_ver = sessionStorage.setItem("version_menu", version_menu.options.selectedIndex);
+			saved_lan = sessionStorage.setItem("lang_menu", lang_menu.options.selectedIndex);
 		});
 
 		content.append(version_menu, lang_menu, translateBtn, save);
