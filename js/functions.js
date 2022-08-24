@@ -119,6 +119,7 @@ let helper_methods = {
 					text_go_directly_to: 'Go to: ',
 					text_products_search_title: 'search results',
 					text_products_title: 'Products',
+					text_product_title: 'Products',
 					text_filters_selected_clear_button: 'Clear all filters',
 					text_products: 'products.',
 					text_category_no_content_before: 'No',
@@ -133,6 +134,7 @@ let helper_methods = {
 					text_go_directly_to: 'Gå til: ',
 					text_products_search_title: 'søge resultater',
 					text_products_title: 'Produkter',
+					text_product_title: 'Produkter',
 					text_filters_selected_clear_button: 'Fjern alle filtre',
 					text_products: 'produkter.',
 					text_category_no_content_before: 'Ingen',
@@ -147,6 +149,7 @@ let helper_methods = {
 					text_go_directly_to: 'Gå till: ',
 					text_products_search_title: 'sökresultat',
 					text_products_title: 'Produkter',
+					text_product_title: 'Produkter',
 					text_filters_selected_clear_button: 'Rensa alla filter',
 					text_products: 'produkter.',
 					text_category_no_content_before: 'Inga',
@@ -161,6 +164,7 @@ let helper_methods = {
 					text_go_directly_to: 'Ga naar: ',
 					text_products_search_title: 'zoekresultaten',
 					text_products_title: 'Producten',
+					text_product_title: 'Producten',
 					text_filters_selected_clear_button: 'Alle filters wissen',
 					text_products: 'producten.',
 					text_category_no_content_before: 'Geen',
@@ -175,6 +179,7 @@ let helper_methods = {
 					text_go_directly_to: 'Gå til: ',
 					text_products_search_title: 'søkeresultater',
 					text_products_title: 'Produkter',
+					text_product_title: 'Produkter',
 					text_filters_selected_clear_button: 'Fjern alle filter',
 					text_products: 'produkter.',
 					text_category_no_content_before: 'Ingen',
@@ -189,6 +194,7 @@ let helper_methods = {
 					text_go_directly_to: 'Mene: ',
 					text_products_search_title: 'hakutulokset',
 					text_products_title: 'Tuotteet',
+					text_product_title: 'Tuotteet',
 					text_filters_selected_clear_button: 'Tyhjennä kaikki suodattimet',
 					text_products: 'tuotteet.',
 					text_category_no_content_before: 'Ei',
@@ -203,6 +209,7 @@ let helper_methods = {
 					text_go_directly_to: 'Gehe zu: ',
 					text_products_search_title: 'suchergebnisse',
 					text_products_title: 'Produkte',
+					text_product_title: 'Produkte',
 					text_filters_selected_clear_button: 'Alle Filter löschen',
 					text_products: 'produkte.',
 					text_category_no_content_before: 'Nein',
@@ -217,6 +224,7 @@ let helper_methods = {
 					text_go_directly_to: 'Aller à: ',
 					text_products_search_title: 'résultats de recherche',
 					text_products_title: 'Des produits',
+					text_product_title: 'Des produits',
 					text_filters_selected_clear_button: 'Effacer tous les filtres',
 					text_products: 'des produits.',
 					text_category_no_content_before: 'Non',
@@ -471,7 +479,9 @@ let helper_methods = {
 					if (input) {
 						input.value = value;
 						input.dispatchEvent(new Event('input', {bubbles:true}));
-					}					
+					} else {
+						console.log("Skipped: '" + key + "' as it does not exist in this template.");
+					}				
 				}
 			}
 
