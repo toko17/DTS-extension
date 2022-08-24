@@ -8,7 +8,7 @@ let helper_methods = {
 		custom_input.setAttribute("for", "fileUpload");
 		custom_input.innerHTML = "Choose File";
 		custom_input.addEventListener("click", function() {
-			var edit_btn = document.querySelector(".page-header .btn");
+			let edit_btn = document.querySelector(".page-header .btn");
 			if(edit_btn.textContent.trim() == "Edit") {
 				edit_btn.click();
 			}
@@ -26,24 +26,24 @@ let helper_methods = {
 		let arrayOuter = [];
 
 		function Upload() {
-			var fileUpload = document.getElementById("fileUpload");
-			var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+			let fileUpload = document.getElementById("fileUpload");
+			let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
 			if (regex.test(fileUpload.value.toLowerCase())) {
 				if (typeof (FileReader) != "undefined") {
-					var reader = new FileReader();
+					let reader = new FileReader();
 					reader.onload = function (e) {
-						var table = document.createElement("table");
-						var rows = e.target.result.split("\n");
-						var split_sign = ",";
-						for (var i = 0; i < rows.length; i++) {
+						let table = document.createElement("table");
+						let rows = e.target.result.split("\n");
+						let split_sign = ",";
+						for (let i = 0; i < rows.length; i++) {
 							if (rows[i].indexOf(",") == -1) {
 								split_sign = ";";
 							}
-							var cells = rows[i].split(split_sign);
+							let cells = rows[i].split(split_sign);
 							if (cells.length > 1) {
-								var row = table.insertRow(-1);
-								for (var j = 0; j < cells.length; j++) {
-									var cell = row.insertCell(-1);
+								let row = table.insertRow(-1);
+								for (let j = 0; j < cells.length; j++) {
+									let cell = row.insertCell(-1);
 									cell.innerHTML = cells[j];
 								}
 							}
@@ -70,13 +70,12 @@ let helper_methods = {
 			}
 		}
 
-		let button = document.createElement("button");
+		let button = document.createElement("button", "start");
 		button.innerHTML="Start";
-		button.classList.add("start");
 
 		content.append(button);
 
-		var event = new Event('input');
+		let event = new Event('input');
 
 		button.addEventListener("click", () => {
 			for(let i = 0; i < arrayOuter.length; i++) {
