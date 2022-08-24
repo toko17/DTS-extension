@@ -5,7 +5,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://my.helloretail.com/*"
+                "https://my.helloretail.com/company*"
             ],
             "js": ["js/helper.js", "js/functions.js", "js/directory.js"],
             "css": ["css/general.css"]
