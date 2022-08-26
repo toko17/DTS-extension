@@ -18,7 +18,7 @@ Chrome extension made for helping DTS.
 
 ## Upcoming
 
-- 
+- Add more options so it's possible to choose what should be translated and what shouldn't
 
 ## Released
 
