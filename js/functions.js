@@ -546,8 +546,8 @@ let helper_methods = {
 
 			// For changing init visuals
 			let init_container = document.querySelector(".card.panel-default");
-			init_container.querySelector(".form-group:nth-child(3) input").value = vers.title;
-			init_container.querySelector(".form-group:nth-child(4) input").value = vers.subtitle;
+			init_container.querySelector("#initialContentEditor .form-group:nth-child(3) input").value = vers.title;
+			init_container.querySelector("#initialContentEditor .form-group:nth-child(4) input").value = vers.subtitle;
 
 			// For changing init values
 			let init_content = document.querySelector("input[name='partnerSearchConfigViewModel.initialContentJson']");

@@ -22,6 +22,9 @@ Chrome extension made for helping DTS.
 
 ## Released
 
+26/08/2022
+- Minor bugfix that would visually change content engines instead of initial content
+
 24/08/2022
 - Translations for older versions of search so it can adapt to whatever version you are on.
 - Automatically detect what search is being used.
