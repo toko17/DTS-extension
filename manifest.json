@@ -7,8 +7,15 @@
             "matches": [
                 "https://my.helloretail.com/company*"
             ],
-            "js": ["js/helper.js", "js/functions.js", "js/directory.js"],
-            "css": ["css/general.css"]
+            "js": [
+                "js/translations.js",
+                "js/helper.js", 
+                "js/functions.js", 
+                "js/directory.js"
+            ],
+            "css": [
+                "css/general.css"
+            ]
         }
     ]
 }
