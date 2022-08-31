@@ -1,5 +1,5 @@
-# DTS-extension
-Chrome extension made for helping DTS.
+# Delivery & Tech support | extension
+Chrome extension made for helping Delivery & Tech support.
 
 ## How to add to chrome:
 
@@ -26,15 +26,15 @@ Chrome extension made for helping DTS.
 
 ## Upcoming:
 
-- Add more options so it's possible to choose what should be translated and what shouldn't
+- Add more options so it's possible to choose what should be translated and what shouldn't.
 
 ## Released:
 
 31/08/2022
-- Copy trigger algorithms
+- Copy trigger algorithms.
 
 26/08/2022
-- Minor bugfix that would visually change content engines instead of initial content
+- Minor bugfix that would visually change content engines instead of initial content.
 
 24/08/2022
 - Translations for older versions of search so it can adapt to whatever version you are on.
