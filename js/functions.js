@@ -153,16 +153,17 @@ let helper_methods = {
 
 		saved_ver = sessionStorage.getItem("version_menu");
 		saved_lan = sessionStorage.getItem("lang_menu");
+		let input_event = new Event('input', {bubbles:true});
 
 		if (saved_ver && saved_lan) {
 			version_menu.options[Number(saved_ver)].selected = true;
-			version_menu.dispatchEvent(new Event('input', {bubbles:true}));
+			version_menu.dispatchEvent(input_event);
 			lang_menu.options.selectedIndex = Number(saved_lan);
 		}
 
 		if (search_version() && !saved_ver && !saved_lan) {
 			version_menu.querySelector(`option[value=${search_version()}]`).selected = true;
-			version_menu.dispatchEvent(new Event('input', {bubbles:true}));
+			version_menu.dispatchEvent(input_event);
 		}
 		
 		let translateBtn = create_element("button", "start");
@@ -175,7 +176,7 @@ let helper_methods = {
 					let input = document.querySelector(`input[name='${key}']`);
 					if (input) {
 						input.value = value;
-						input.dispatchEvent(new Event('input', {bubbles:true}));
+						input.dispatchEvent(input_event);
 					} else {
 						console.log("Skipped: '" + key + "' as it does not exist in this template.");
 					}				
@@ -187,7 +188,7 @@ let helper_methods = {
 			if (domain_url) {
 				let input = document.querySelector("input[name='webshop_name']");
 				input.value = domain_url.textContent.trim();
-				input.dispatchEvent(new Event('input', {bubbles:true}));
+				input.dispatchEvent(input_event);
 			}
 
 			// For changing init visuals
@@ -221,5 +222,54 @@ let helper_methods = {
 		let placeholder = create_element("h4", "helper-header")
 		placeholder.textContent = "No helper for this site";
 		content.append(placeholder);
+	},
+	copy_triggers: function() {
+		let trigger_algo = null;
+		if (sessionStorage.getItem("trigger_algo")) {
+			trigger_algo = sessionStorage.getItem("trigger_algo");
+		}
+		let copy = create_element("button", "start")
+		copy.textContent = "Copy Algorithm";
+		copy.addEventListener("click", function() {
+			let algorithm = document.querySelector("#product-sources input[name='productSourcesAsJson']");
+			if (algorithm) {
+				trigger_algo = algorithm.value;
+			}
+			if (trigger_algo) {
+				sessionStorage.setItem("trigger_algo", trigger_algo);
+				alert("Algorithm copied");
+			}
+		});
+		let preview = create_element("button", "start");
+		preview.textContent = "Preview Algorithm";
+		preview.addEventListener("click", function() {
+			if (trigger_algo) {
+				alert("Preview: " + trigger_algo);
+				console.log(JSON.parse(trigger_algo));
+			} else {
+				alert("No algorithm found.");
+			}
+		});
+		let paste = create_element("button", "start");
+		paste.textContent = "Paste Algorithm";
+		paste.addEventListener("click", function() {
+			let algorithm = document.querySelector("#product-sources input[name='productSourcesAsJson']");
+			if (algorithm && trigger_algo) {
+				algorithm.value = trigger_algo;
+			}
+			document.querySelector("button[type='submit']").click();
+		});
+		let clear_saved = create_element("button", "start");
+		clear_saved.textContent = "Clear Saved Algorithm";
+		clear_saved.addEventListener("click", function() {
+			if (trigger_algo) {
+				trigger_algo = null;
+				sessionStorage.removeItem("trigger_algo");
+				alert("Saved algorithm cleared.");
+			} else {
+				alert("No saved algorithm to clear.");
+			}
+		});
+		content.append(copy, preview, paste, clear_saved);
 	}
 }

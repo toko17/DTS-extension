@@ -22,6 +22,9 @@ Chrome extension made for helping DTS.
 
 ## Released
 
+31/08/2022
+- Copy trigger algorithms
+
 26/08/2022
 - Minor bugfix that would visually change content engines instead of initial content
 

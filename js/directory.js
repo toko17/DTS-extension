@@ -10,6 +10,8 @@ function select_helper() {
 		helper_methods.synonyms();
 	} else if (window.location.pathname.match(/.*(search\/edit\.html).*/g)) {
 		helper_methods.search_edit(JSON.parse(translations));
+	} else if (window.location.pathname.match(/.*(triggeredemail\/edit\.html).*/g)) {
+		helper_methods.copy_triggers();
 	} else {
 		helper_methods.no_helper();
 	}
