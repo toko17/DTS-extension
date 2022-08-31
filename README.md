@@ -1,4 +1,4 @@
-# Delivery & Tech support | extension
+# Delivery & Tech support | Chrome extension
 Chrome extension made for helping Delivery & Tech support.
 
 ## How to add to chrome:
