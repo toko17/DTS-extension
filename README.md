@@ -15,6 +15,7 @@ Chrome extension made for helping DTS.
 
 - Synonym helper including: Upload from CSV, Parse from CSV and Delete all.
 - Search translations for Desktop 2021, Mobile 2021 and Embedded.
+- Copy algorithms from one trigger to another.
 
 ## Upcoming
 
