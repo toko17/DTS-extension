@@ -59,7 +59,7 @@
 	flex-direction: column;
 }
 
-.helper-content>*:last-child {
+.helper-content > *:last-child {
 	margin-bottom: 0;
 }
 
