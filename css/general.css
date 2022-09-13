@@ -21,14 +21,14 @@
 }
 
 .custom-file-upload, #upload, .start, .helper-delete-all, .select {
-    border: none;
+	border: none;
 	color: #fff;
 	font-family: "Poppins", sans-serif;
-    display: inline-block;
+	display: inline-block;
 	background-color: transparent;
-    padding: 0 5px;
+	padding: 0 5px;
 	font-weight: 700;
-    cursor: pointer;
+	cursor: pointer;
 	margin-bottom: 0.5em;
 	text-align: start;
 	transition: 0.2s;
@@ -48,15 +48,15 @@
 }
 
 .helper-content input[type="file"] {
-    display: none;
+	display: none;
 }
 
 .helper-content {
 	padding-top: 7px;
-    display: flex;
+	display: flex;
 	font-size: 16px;
-    width: 100%;
-    flex-direction: column;
+	width: 100%;
+	flex-direction: column;
 }
 
 .helper-content > *:last-child {
@@ -77,9 +77,9 @@
 	position: fixed;
 	z-index: 99999;
 	display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
 	top: 7.6%;
 	right: -250px;
 	width: 250px;
