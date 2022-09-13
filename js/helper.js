@@ -3,7 +3,7 @@ let title = company.querySelector("h1");
 
 let helper = create_element("div", "helper");
 let helper_fun = create_element("div", "helper-fun");
-let header = create_element("h2", "helper-header");
+let header = create_element("h3", "helper-header");
 let content = create_element("div", "helper-content");
 
 helper.classList.add("helper")

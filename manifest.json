@@ -1,14 +1,21 @@
 {
     "manifest_version": 3,
-    "name": "Hello Retail DTS",
+    "name": "D & TS Extension",
     "version": "1.0",
     "content_scripts": [
         {
             "matches": [
-                "https://my.helloretail.com/*"
+                "https://my.helloretail.com/company*"
             ],
-            "js": ["js/helper.js", "js/functions.js", "js/directory.js"],
-            "css": ["css/general.css"]
+            "js": [
+                "js/translations.js",
+                "js/helper.js", 
+                "js/functions.js", 
+                "js/directory.js"
+            ],
+            "css": [
+                "css/general.css"
+            ]
         }
     ]
 }
